@@ -1,0 +1,16 @@
+body {
+  font-family: Avenir, Monsterrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+  color: rgb(33, 0, 74);
+  background-color: rgb(225, 202, 250);
+  padding: 0px 0px 5em;
+}
+
+header {
+  padding: 1em 2em 2em;
+  margin: -1em;
+  background-color: rgb(205, 182, 230);
+}
+
+header nav a {
+  margin: 5% 3em;
+}
