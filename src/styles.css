@@ -1,17 +1,61 @@
+:root {
+  color-scheme: light dark;
+  --light: rgb(215 192 235);
+  --dark: rgb(103 80 134);
+}
+
 body {
   font-family: Avenir, Monsterrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
-  color: rgb(33, 0, 74);
-  background-color: rgb(225, 202, 250);
   padding: 0px 0px 5em;
 }
 
 header {
   padding: 1em 2em 2em;
   margin: -1em;
-  background-color: rgb(205, 182, 230);
 }
 
 header nav a {
   margin: 5% 3em;
   font-size: 1.5em;
+}
+
+main {
+  margin: 100%;
+}
+
+footer {
+  margin: -1em;
+  padding: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--light);
+    background-color: var(--dark);
+  }
+
+  header {
+    background-color: rgb(60 0 80);
+  }
+
+  footer {
+    background-color: rgba(40 0 60);
+    color: rgb(135 112 160);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: var(--dark);
+    background-color: var(--light);
+  }
+
+  header {
+    background-color: rgb(205 182 230);
+  }
+
+  footer {
+    /* background-color: rgba(0 0 0 0.25); */
+    color: rgb(60 0 80);
+  }
 }
