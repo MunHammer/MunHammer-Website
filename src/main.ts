@@ -1,3 +1,12 @@
+/*
+This file is part of MunHammer's website.
+
+MunHammer's website is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+MunHammer's website is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with Foobar. If not, see <https://www.gnu.org/licenses/>.
+*/
 function replacePLaceholders(): boolean {
   // The heading
   const HEADING = `
@@ -7,6 +16,7 @@ function replacePLaceholders(): boolean {
       <a href="/">Main</a>
       <a href="about.html">About</a>
       <a href="https://github.com/MunHammer/MunHammer-Website">Source code</a>
+      <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text">License - GNU GPL-3.0</a>
     </nav>
   `
   const headerElement = document.getElementById("header");
@@ -33,6 +43,7 @@ function replacePLaceholders(): boolean {
           <li><a href="https://www.reddit.com/user/RichRoof7927/">Reddit</a></li>
         </ul>
       </div>
+      <h5><a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text">License - GNU GPL-3.0</a></h5>
     </nav>
   `
   const footerElement = document.getElementById("footer");
