@@ -38,7 +38,7 @@ function replacePLaceholders(): boolean {
       <div class="footer-column" id="links">
         <h5>Links</h5>
         <ul>
-          <li><a href="https://github.com/MunHammer" target="_blank" rel="noopener noreferrer">Github</a></li>
+          <li><a href="https://github.com/MunHammer" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           <li><a href="https://discord.gg/FYSayAvfnp" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
           <li><a href="https://www.reddit.com/user/RichRoof7927/" target="_blank" rel="noopener noreferrer">Reddit</a></li>
         </ul>
