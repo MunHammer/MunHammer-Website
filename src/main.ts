@@ -21,7 +21,7 @@ function replacePlaceholders(): boolean {
   `
   const headerElement = document.getElementById("header");
   if (headerElement) {
-    headerElement.insertAdjacentHTML("beforebegin", HEADING);
+    headerElement.insertAdjacentHTML("afterbegin", HEADING);
   } else {
     return false;
   }
