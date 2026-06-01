@@ -38,7 +38,7 @@ function replacePlaceholders(): boolean {
       <div class="footer-column" id="links">
         <h5>Links</h5>
         <ul>
-          <li><a href="https://github.com/MunHammer" target="_blank" rel="noopener noreferrer">Github</a></li>
+          <li><a href="https://github.com/MunHammer" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           <li><a href="https://discord.gg/FYSayAvfnp" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
           <li><a href="https://www.reddit.com/user/RichRoof7927/" target="_blank" rel="noopener noreferrer">Reddit</a></li>
         </ul>
@@ -54,8 +54,34 @@ function replacePlaceholders(): boolean {
   }
   return true;
 }
+function getDomainFaviconURL(linkurl: string) {
+  if (!linkurl.startsWith("ht"))
+    return null;
+  const url = new URL(linkurl);
+  try {
+    return `https://www.google.com/s2/favicons?domain=${url.hostname}`;
+  } catch (e) {
+    return "https://www.google.com/s2/favicons?domain=example.com";
+  }
+}
+function faviconizeElements() {
+  const urls = document.querySelectorAll("a");
+  urls.forEach(function(url) {
+    const href = url.getAttribute('href');
+    if (!url.getAttribute("target") || !href)
+      return;
+    const faviconURL = getDomainFaviconURL(href);
+    if (!faviconURL)
+      return;
+    url.outerHTML = `
+      <img src="${faviconURL}" alt="Favicon of ${url.href}" class="favicon">
+    ` + url.outerHTML;
+  });
+}
 function main() {
   if (!replacePlaceholders())
     console.error("Couldn't find elements required")
+  faviconizeElements();
+
 }
 main();

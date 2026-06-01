@@ -22,10 +22,112 @@ You should have received a copy of the GNU General Public License along with Foo
 <body>
 
   <header id="header">
-    <h1>About Me</h1>
+    <h1>About</h1>
   </header>
 
-  <main></main>
+  <main>
+    <div id="me">
+      <h2>Me</h2>
+      <p>Hello, I'm MunHammer (stylized as <code>[Mm]un_?.?[Hh]ammer</code>), this is my website, that I made for me</p>
+      <div id="me_tech">
+        <h3>Tech related stuff</h3>
+        <p>I like making, and implementing programming languages (only <a href="https://en.wikipedia.org/wiki/Brainfuck"
+            target="_blank" rel="noopener noreferrer">brainfuck</a> so far :P). I also like programming in general. I
+          know
+          a
+          bit of Python, am trying to be good at Rust, and know how to google things (aka the basics of whatever).</p>
+        <h3>Non tech related</h3>
+        <p>I do archery, like to read (progression fantasy, xianxia, litrpg, etc.), play D&amp;D, and
+          occasionally make some art. <sub>I also like to play board games, but I don't have much people to play
+            with.</sub>
+        </p>
+      </div>
+      <div id="me_misc">
+        <h3>Miscellaneous</h3>
+        <ul>
+          <li>My birthday is June 8</li>
+          <li>I am a cis, heterosexual guy</li>
+          <li>I've never daily-driven Windows</li>
+          <li>I am in NZST</li>
+        </ul>
+      </div>
+      <div id="me_environment">
+        <h3>My environment</h3>
+        <p>I use two laptops, my Lenovo 300e 2nd gen Chromebook (Intel Celeron N4000, 32 gibibytes of storage, 4
+          gibibytes
+          of RAM) for outside of home, and my Lenovo XiaoXin 14 (Ryzen 7 H255, 512 gigabytes of storage, 16 gigabytes of
+          RAM) (It's from China)</p>
+        <p>The Chromebook uses ChromeOS, with a Debian 13 VM (Baguette), that I use a 128 gigabyte microSD card with it.
+          The
+          software used is:</p>
+        <ul>
+          <li><a href="https://alacritty.org/" target="_blank" rel="noopener noreferrer">Alacritty</a></li>
+          <li>Chrome</li>
+        </ul>
+        <p>
+          The better laptop uses OpenRC, <a href="https://www.gentoo.org/" target="_blank"
+            rel="noopener noreferrer">Gentoo</a>, <a href="https://niri-wm.github.io/niri/" target="_blank"
+            rel="noopener noreferrer">Niri</a>, <a href="https://sw.kovidgoyal.net/kitty/" target="_blank"
+            rel="noopener noreferrer">Kitty</a>, <a href="https://vencord.dev/" target="_blank"
+            rel="noopener noreferrer">Vencord</a>, <a href="https://apps.kde.org/dolphin/" target="_blank"
+            rel="noopener noreferrer">Dolphin</a>, and
+          even <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer">Steam</a>!
+        </p>
+        <p>
+          Both of them use <a href="https://zellij.dev/" target="_blank" rel="noopener noreferrer">Zellij</a>, <a
+            href="https://helix-editor.com/" target="_blank" rel="noopener noreferrer">Helix</a>,
+          <a href="https://www.firefox.com/" target="_blank" rel="noopener noreferrer">Firefox</a>,
+          programming-language-specific tools, <a href="https://git-scm.com/" target="_blank"
+            rel="noopener noreferrer">Git</a>, <a href="https://eza.rocks/" target="_blank"
+            rel="noopener noreferrer">Eza</a>, <a href="https://starship.rs" target="_blank"
+            rel="noopener noreferrer">Starship</a>, <a href="https://github.com/ajeetdsouza/zoxide" target="_blank"
+            rel="noopener noreferrer">Zoxide</a>, and <a href="https://github.com/fastfetch-cli/fastfetch"
+            target="_blank" rel="noopener noreferrer">Fastfetch</a>. There are more things that I use, like <a
+            href="https://writewithharper.com/" target="_blank" rel="noopener noreferrer">Harper-ls</a>, and you can
+          find
+          them in my <a href="https://github.com/MunHammer/My-dotfiles" target="_blank"
+            rel="noopener noreferrer">dotfiles</a> (but
+          right now, I have reset the repo cause I kept doxxing myself)
+        </p>
+      </div>
+    </div>
+    <div id="website">
+      <h2>This Website</h2>
+      <p>
+        This website is deployed with GitHub actions, look at my action <a
+          href="https://github.com/MunHammer/MunHammer-Website/tree/main/.github/workflows/static.yml" target="_blank"
+          rel="noopener noreferrer">here</a>. It is programmed with raw CSS, HTML, and TypeScript, with no frameworks
+        whatsoever. The domain name was bought at <a href="https://porkbun.com" target="_blank"
+          rel="noopener noreferrer">Porkbun</a>, for only 7 USD.
+      </p>
+    </div>
+    <div id="projects">
+      <h2>My Projects</h2>
+      <div id="projects_brainfuck-rs">
+        <h3>Brainfuck-rs</h3>
+        <p>
+          Brainfuck-rs is my attempt at making a quality brainfuck compiler, interpreter, byte code VM all-in-one. One
+          of the goals of brainfuck-rs is to be as professional as possible, that means testing every function, using
+          industry standard crates, documenting everything, and no linting errors.
+        </p>
+      </div>
+      <div id="projects_MunBot">
+        <h3>MunBot</h3>
+        <p>
+          MunBot is a small discord bot I'm writing in Python, it is currently undergoing a rewrite (one that is being
+          procrastinated). MunBot is not trying to be the next big thing, only the next funny thing for my friend group.
+          MunBot has been burned at the stake once, apparently because it was <em>"homophobic"??????</em>
+        </p>
+      </div>
+      <div id="projects_website">
+        <h3>This Website</h3>
+        <p>
+          This website is thing that I'm going to point people towards when they want to learn about me. It might
+          also host playground for my other projects in the future, provided I can figure out how to compile to WASM.
+        </p>
+      </div>
+    </div>
+  </main>
 
   <footer id="footer">
   </footer>
