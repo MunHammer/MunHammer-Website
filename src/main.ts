@@ -10,7 +10,7 @@ You should have received a copy of the GNU General Public License along with Foo
 function replacePLaceholders(): boolean {
   // The heading
   const HEADING = `
-    <h1 id="title">MunHammer.com</h1>
+    <h2 id="title">MunHammer.com</h2>
     <nav>
       <a href="/"><img src="images/pfp.gif" alt="Moving Scribbles" height="90" width="90"></a>
       <a href="/">Main</a>
