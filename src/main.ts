@@ -14,9 +14,9 @@ function replacePLaceholders(): boolean {
     <nav>
       <a href="/"><img src="images/pfp.gif" alt="Moving Scribbles" height="90" width="90"></a>
       <a href="/">Main</a>
-      <a href="about.html">About</a>
-      <a href="https://github.com/MunHammer/MunHammer-Website">Source code</a>
-      <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text">License - GNU GPL-3.0</a>
+      <a href="/about.html">About</a>
+      <a href="https://github.com/MunHammer/MunHammer-Website" target="_blank" rel="noopener noreferrer">Source code</a>
+      <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text" target="_blank" rel="noopener noreferrer">License - GNU GPL-3.0</a>
     </nav>
   `
   const headerElement = document.getElementById("header");
@@ -32,18 +32,18 @@ function replacePLaceholders(): boolean {
         <h5>Site map</h5>
         <ul>
           <li><a href="/">Main</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="/about.html">About</a></li>
         </ul>
       </div>
       <div class="footer-column" id="links">
         <h5>Links</h5>
         <ul>
-          <li><a href="https://github.com/MunHammer">Github</a></li>
-          <li><a href="https://discord.gg/FYSayAvfnp">Discord Server</a></li>
-          <li><a href="https://www.reddit.com/user/RichRoof7927/">Reddit</a></li>
+          <li><a href="https://github.com/MunHammer" target="_blank" rel="noopener noreferrer">Github</a></li>
+          <li><a href="https://discord.gg/FYSayAvfnp" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
+          <li><a href="https://www.reddit.com/user/RichRoof7927/" target="_blank" rel="noopener noreferrer">Reddit</a></li>
         </ul>
       </div>
-      <h5><a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text">License - GNU GPL-3.0</a></h5>
+      <h5><a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text" target="_blank" rel="noopener noreferrer">License - GNU GPL-3.0</a></h5>
     </nav>
   `
   const footerElement = document.getElementById("footer");

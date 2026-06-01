@@ -37,6 +37,20 @@ footer {
   padding: 1em;
 }
 
+footer nav {
+  display: flex;
+}
+
+footer nav div {
+  margin: auto 3em auto 1em;
+}
+
+footer nav div ul {
+  list-style-type: none;
+  list-style: none;
+  padding-left: 0;
+}
+
 a {
   text-decoration: none;
 }
