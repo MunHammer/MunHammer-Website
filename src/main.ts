@@ -66,13 +66,13 @@ function getDomainFaviconURL(linkurl: string) {
 }
 function faviconizeElements() {
   const urls = document.querySelectorAll("a");
-  console.log(urls);
   urls.forEach(function(url) {
-    console.log(url);
     const href = url.getAttribute('href');
     if (!url.getAttribute("target") || !href)
       return;
     const faviconURL = getDomainFaviconURL(href);
+    if (!faviconURL)
+      return;
     url.outerHTML = `
       <img src="${faviconURL}" alt="Favicon of ${url.href}" class="favicon">
     ` + url.outerHTML;
