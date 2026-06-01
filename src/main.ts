@@ -7,7 +7,7 @@ MunHammer's website is distributed in the hope that it will be useful, but WITHO
 
 You should have received a copy of the GNU General Public License along with Foobar. If not, see <https://www.gnu.org/licenses/>.
 */
-function replacePLaceholders(): boolean {
+function replacePlaceholders(): boolean {
   // The heading
   const HEADING = `
     <h2 id="title">MunHammer.com</h2>
@@ -21,7 +21,7 @@ function replacePLaceholders(): boolean {
   `
   const headerElement = document.getElementById("header");
   if (headerElement) {
-    headerElement.innerHTML = HEADING + headerElement.innerHTML;
+    headerElement.insertAdjacentHTML("beforebegin", HEADING);
   } else {
     return false;
   }
@@ -55,9 +55,7 @@ function replacePLaceholders(): boolean {
   return true;
 }
 function main() {
-  if (!replacePLaceholders()) {
+  if (!replacePlaceholders())
     console.error("Couldn't find elements required")
-  }
-
 }
 main();
