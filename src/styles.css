@@ -1,17 +1,108 @@
-body {
+/*
+This file is part of MunHammer's website.
+
+MunHammer's website is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+MunHammer's website is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with Foobar. If not, see <https://www.gnu.org/licenses/>.
+*/
+:root {
+  color-scheme: light dark;
   font-family: Avenir, Monsterrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
-  color: rgb(33, 0, 74);
-  background-color: rgb(225, 202, 250);
+  --light: rgb(215 192 235);
+  --dark: rgb(103 80 134);
+}
+
+body {
   padding: 0px 0px 5em;
 }
 
 header {
   padding: 1em 2em 2em;
   margin: -1em;
-  background-color: rgb(205, 182, 230);
 }
 
 header nav a {
   margin: 5% 3em;
   font-size: 1.5em;
+}
+
+main {
+  margin: 100%;
+}
+
+footer {
+  margin: -1em;
+  padding: 1em;
+}
+
+footer nav {
+  display: flex;
+}
+
+footer nav div {
+  margin: auto 3em auto 1em;
+}
+
+footer nav div ul {
+  list-style-type: none;
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--light);
+    background-color: var(--dark);
+  }
+
+  header {
+    background-color: rgb(60 0 80);
+  }
+
+  footer {
+    background-color: rgba(40 0 60);
+    color: rgb(135 112 160);
+  }
+
+  a:visited {
+    color: rgb(0, 202, 219);
+  }
+
+  a {
+    color: var(--light);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: var(--dark);
+    background-color: var(--light);
+  }
+
+  header {
+    background-color: rgb(205 182 230);
+  }
+
+  footer {
+    background-color: rgba(175 152 200);
+    color: rgb(60 0 80);
+  }
+
+  a:visited {
+    color: rgb(0, 92, 109);
+  }
+
+  a {
+    color: var(--dark);
+  }
 }
