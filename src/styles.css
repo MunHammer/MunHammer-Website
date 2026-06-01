@@ -29,7 +29,7 @@ header nav a {
 }
 
 main {
-  margin: 100%;
+  margin: 5em;
 }
 
 footer {
@@ -79,7 +79,7 @@ a:hover {
   }
 
   a {
-    color: var(--light);
+    color: rgb(0, 102, 219);
   }
 }
 
@@ -103,6 +103,6 @@ a:hover {
   }
 
   a {
-    color: var(--dark);
+    color: rgb(0, 0, 109);
   }
 }
