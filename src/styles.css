@@ -15,25 +15,27 @@ You should have received a copy of the GNU General Public License along with Foo
 }
 
 body {
-  padding: 0px 0px 5em;
+  padding: 0;
+  margin: 0;
 }
 
 header {
   padding: 1em 2em 2em;
-  margin: -1em;
+  margin: 0;
 }
 
 header nav a {
-  margin: 5% 3em;
+  margin: 5% 6em 5% 0;
   font-size: 1.5em;
 }
 
 main {
-  margin: 5em;
+  padding: 5em;
+  margin: 0;
 }
 
 footer {
-  margin: -1em;
+  margin: 0em;
   padding: 1em;
 }
 
@@ -59,6 +61,12 @@ a:hover {
   text-decoration: underline;
 }
 
+.favicon {
+  height: 1em;
+  margin: 0;
+  padding: 0;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: var(--light);
@@ -80,6 +88,10 @@ a:hover {
 
   a {
     color: rgb(0, 102, 219);
+  }
+
+  main a {
+    color: rgb(56, 158, 255);
   }
 }
 
@@ -104,5 +116,9 @@ a:hover {
 
   a {
     color: rgb(0, 0, 109);
+  }
+
+  main a:visited {
+    color: rgb(0, 62, 79);
   }
 }

@@ -54,10 +54,34 @@ function replacePLaceholders(): boolean {
   }
   return true;
 }
-function main() {
-  if (!replacePLaceholders()) {
-    console.error("Couldn't find elements required")
+function getDomainFaviconURL(linkurl: string) {
+  if (!linkurl.startsWith("ht"))
+    return null;
+  const url = new URL(linkurl);
+  try {
+    return `https://www.google.com/s2/favicons?domain=${url.hostname}`;
+  } catch (e) {
+    return "https://www.google.com/s2/favicons?domain=example.com";
   }
+}
+function faviconizeElements() {
+  const urls = document.querySelectorAll("a");
+  console.log(urls);
+  urls.forEach(function(url) {
+    console.log(url);
+    const href = url.getAttribute('href');
+    if (!url.getAttribute("target") || !href)
+      return;
+    const faviconURL = getDomainFaviconURL(href);
+    url.outerHTML = `
+      <img src="${faviconURL}" alt="Favicon of ${url.href}" class="favicon">
+    ` + url.outerHTML;
+  });
+}
+function main() {
+  if (!replacePLaceholders())
+    console.error("Couldn't find elements required")
+  faviconizeElements();
 
 }
 main();
