@@ -11,10 +11,12 @@ class TableOfContents {
   name: string;
   descendants: TableOfContents[] | null;
   root: boolean;
-  constructor(name: string, root: boolean) {
+  id: string;
+  constructor(name: string, root: boolean, id: string) {
     this.name = name;
     this.root = root;
     this.descendants = null;
+    this.id = id;
   }
   addDescendant(descendant: TableOfContents) {
     if (this.descendants === null) {
@@ -23,9 +25,10 @@ class TableOfContents {
     this.descendants.push(descendant);
   }
   toHTML() {
+    const path = window.location.pathname;
     let html = this.root
-      ? `<div><h3>${this.name}</h3>`
-      : `<h4>${this.name}</h4>`;
+      ? `<div><a href="${path}#${this.id}"><h3>${this.name}</h3><a>`
+      : `<a href=${path}#${this.id}><h4>${this.name}</h4></a>`;
     if (this.descendants !== null) {
       this.descendants.forEach((descendant) => {
         html += descendant.toHTML();
@@ -43,11 +46,11 @@ export function generateTableOfContents() {
   document.querySelectorAll("h2,h3").forEach((heading_raw) => {
     let heading = heading_raw as HTMLHeadingElement;
     if (heading.nodeName == "H2") {
-      contents.push(new TableOfContents(heading.innerText, true));
+      contents.push(new TableOfContents(heading.innerText, true, heading.id));
     } else {
       contents
         .at(-1)
-        ?.addDescendant(new TableOfContents(heading.innerText, false));
+        ?.addDescendant(new TableOfContents(heading.innerText, false, heading.id));
     }
     console.log(heading_raw.nodeName);
   });
