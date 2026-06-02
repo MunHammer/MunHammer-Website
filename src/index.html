@@ -16,46 +16,51 @@ You should have received a copy of the GNU General Public License along with Foo
   <title>MunHammer.com | Main</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="/favicon.ico">
-  <script src="main.js" defer></script>
+  <script src="main.mjs" type="module"></script>
 </head>
 
 <body>
-
   <header id="header">
     <h1>Main</h1>
   </header>
 
-  <main>
-    <h2>Welcome!</h2>
-    <p>
-      Hello, whether you be a friend, stranger, or anything in between or outside, welcome to my website. Here, I
-      have… Only this page, and my <a href="/about.html">About</a> page? Eh, I'll add more stuff later, remind me to get
-      to that please.
-    </p>
-    <h3>Social media</h3>
-    <p>
-      I also have links to my social medias down at the bottom, down at the darker part, but I'll just give you the
-      links here.
-    </p>
-    <ul>
-      <li><a href="https://github.com/MunHammer" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="https://discord.gg/FYSayAvfnp" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
-      <li><a href="https://www.reddit.com/user/RichRoof7927/" target="_blank" rel="noopener noreferrer">Reddit</a></li>
-    </ul>
-    <sub>Note: I don't really talk <em>that</em> often, but I do tend to lurk a bunch, so if you just ping me or
-      something, I'll probably see it.</sub>
-    <h3>Licensing</h3>
-    <p>
-      Also, this website is licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text"
-        target="_blank" rel="noopener noreferrer">GNU GPL-3.0</a>, which means that the source code is publicly
-      available on GitHub, <a href="https://github.com/MunHammer/MunHammer-Website" target="_blank"
-        rel="noopener noreferrer">here</a>.
-    </p>
-  </main>
-
-  <footer id="footer">
-  </footer>
-
+  <div id="content">
+    <main>
+      <h2 id="welcome">Welcome!</h2>
+      <p>
+        Hello, whether you be a friend, stranger, or anything in between or
+        outside, welcome to my website. Here, I have… Only this page, and my
+        <a href="/about.html">About</a> page? Eh, I'll add more stuff later,
+        remind me to get to that please.
+      </p>
+      <h3 id="socials">Social media</h3>
+      <p>
+        I also have links to my social medias down at the bottom, down at the
+        darker part, but I'll just give you the links here.
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/MunHammer" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </li>
+        <li>
+          <a href="https://discord.gg/FYSayAvfnp" target="_blank" rel="noopener noreferrer">Discord Server</a>
+        </li>
+        <li>
+          <a href="https://www.reddit.com/user/RichRoof7927/" target="_blank" rel="noopener noreferrer">Reddit</a>
+        </li>
+      </ul>
+      <sub>Note: I don't really talk <em>that</em> often, but I do tend to lurk
+        a bunch, so if you just ping me or something, I'll probably see
+        it.</sub>
+      <h3 id="licensing">Licensing</h3>
+      <p>
+        Also, this website is licensed under the
+        <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text" target="_blank"
+          rel="noopener noreferrer">GNU GPL-3.0</a>, which means that the source code is publicly available on GitHub,
+        <a href="https://github.com/MunHammer/MunHammer-Website" target="_blank" rel="noopener noreferrer">here</a>.
+      </p>
+    </main>
+  </div>
 </body>
 
 </html>

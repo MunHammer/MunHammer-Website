@@ -9,9 +9,11 @@ You should have received a copy of the GNU General Public License along with Foo
 */
 :root {
   color-scheme: light dark;
-  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+  font-family:
+    Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
   --light: rgb(215 192 235);
   --dark: rgb(103 80 134);
+  line-height: 1.7em;
 }
 
 body {
@@ -20,18 +22,43 @@ body {
 }
 
 header {
-  padding: 1em 2em 2em;
-  margin: 0;
+  padding: 1em 2em 8em;
+  margin: 0 0 -13em;
+  line-height: 1.2em;
+  font-family:
+    Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+    sans-serif;
+  font-weight: bold;
 }
 
 header nav a {
-  margin: 5% 6em 5% 0;
-  font-size: 1.5em;
+  margin: 5% 5em 5% 0;
+  font-size: 1.4em;
+}
+
+#content {
+  padding: 5em 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
 }
 
 main {
-  padding: 5em;
-  margin: 0;
+  padding: 0 0 0 9em;
+  width: 40em;
+  font-size: 1.03em;
+}
+
+#tableOfContents {
+  padding: 1em 0 0 3em;
+}
+
+#tableOfContents nav div h4 {
+  padding: 0 0 0 1.5em;
+}
+
+#tableOfContents nav div h3 {
+  padding: 0 0 0 0.5em;
 }
 
 footer {
@@ -66,18 +93,34 @@ a:hover {
   padding: 0;
 }
 
+main h2,
+main h3 {
+  display: flex;
+}
+
+main h2 .section,
+main h3 .section {
+  display: none;
+  padding: 0 1em;
+}
+
+main h2:hover .section,
+main h3:hover .section {
+  display: block;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: var(--light);
-    background-color: var(--dark);
+    background: var(--dark);
   }
 
   header {
-    background-color: rgb(60 0 80);
+    background: linear-gradient(180deg in oklab, rgb(60 0 80), transparent 90%);
   }
 
   footer {
-    background-color: rgba(40 0 60);
+    background-color: rgb(40 0 60);
     color: rgb(135 112 160);
   }
 
@@ -92,20 +135,28 @@ a:hover {
   main a {
     color: rgb(56, 158, 255);
   }
+
+  h2,
+  h3,
+  h4 {
+    color: var(--light);
+  }
 }
 
 @media (prefers-color-scheme: light) {
   body {
     color: var(--dark);
-    background-color: var(--light);
+    background: var(--light);
   }
 
   header {
-    background-color: rgb(205 182 230);
+    background: linear-gradient(180deg in oklab,
+        rgb(155 132 180),
+        var(--light) 99%);
   }
 
   footer {
-    background-color: rgba(175 152 200);
+    background-color: rgb(175 152 200);
     color: rgb(60 0 80);
   }
 
@@ -119,5 +170,19 @@ a:hover {
 
   main a:visited {
     color: rgb(0, 62, 79);
+  }
+}
+
+@media (max-width: 768px) {
+  #tableOfContents {
+    display: none !important;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  main {
+    padding: 1em;
   }
 }

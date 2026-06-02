@@ -1,2 +1,3 @@
 # ignore typescript build artifacts
 **/*.js
+**/*.mjs
