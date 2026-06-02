@@ -22,7 +22,7 @@ body {
 
 header {
   padding: 1em 2em 8em;
-  margin: 0 0 -10em;
+  margin: 0 0 -13em;
   line-height: 1.2em;
   font-family:
     Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
@@ -35,9 +35,29 @@ header nav a {
   font-size: 1.5em;
 }
 
-main {
-  padding: 5em;
+#content {
+  padding: 5em 0;
   margin: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+main {
+  padding: 0 0 0 9em;
+  width: 40em;
+  font-size: 1.03em;
+}
+
+#tableOfContents {
+  padding: 1em 0 0 3em;
+}
+
+#tableOfContents nav div h4 {
+  padding: 0 0 0 1.5em;
+}
+
+#tableOfContents nav div h3 {
+  padding: 0 0 0 0.5em;
 }
 
 footer {
@@ -79,7 +99,7 @@ a:hover {
   }
 
   header {
-    background: linear-gradient(180deg in oklab, rgb(60 0 80), var(--dark) 98%);
+    background: linear-gradient(180deg in oklab, rgb(60 0 80), transparent 90%);
   }
 
   footer {
