@@ -1,3 +1,12 @@
+/*
+This file is part of MunHammer's website.
+
+MunHammer's website is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+MunHammer's website is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with Foobar. If not, see <https://www.gnu.org/licenses/>.
+*/
 export function replacePlaceholders(): boolean {
   // The heading
   const HEADING = `
@@ -43,6 +52,15 @@ export function replacePlaceholders(): boolean {
   body?.insertAdjacentHTML("beforeend", FOOTER);
   return true;
 }
+
+export function bookmarkHeadings() {
+    const path = window.location.pathname;
+  document.querySelectorAll("main h2, main h3").forEach((heading) => {
+    heading.insertAdjacentHTML("beforeend", "<div class=\"section\"> §</div>")
+    heading.outerHTML = `<a href=${path}#${heading.id}>${heading.outerHTML}</a>`
+  })
+}
+
 export function getDomainFaviconURL(linkurl: string) {
   if (!linkurl.startsWith("ht")) return null;
   const url = new URL(linkurl);
