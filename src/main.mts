@@ -7,6 +7,7 @@ MunHammer's website is distributed in the hope that it will be useful, but WITHO
 
 You should have received a copy of the GNU General Public License along with Foobar. If not, see <https://www.gnu.org/licenses/>.
 */
+import { addTableOfContentsToHTML, generateTableOfContents } from "./table-of-contents.mjs";
 function replacePlaceholders(): boolean {
   // The heading
   const HEADING = `
@@ -79,5 +80,6 @@ function faviconizeElements() {
 function main() {
   if (!replacePlaceholders()) console.error("Couldn't find elements required");
   faviconizeElements();
+  addTableOfContentsToHTML(generateTableOfContents());
 }
 main();
