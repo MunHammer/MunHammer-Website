@@ -18,7 +18,7 @@ function replacePlaceholders(): boolean {
       <a href="https://github.com/MunHammer/MunHammer-Website" target="_blank" rel="noopener noreferrer">Source code</a>
       <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text" target="_blank" rel="noopener noreferrer">License - GNU GPL-3.0</a>
     </nav>
-  `
+  `;
   const headerElement = document.getElementById("header");
   if (headerElement) {
     headerElement.insertAdjacentHTML("afterbegin", HEADING);
@@ -45,18 +45,17 @@ function replacePlaceholders(): boolean {
       </div>
       <h5><a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text" target="_blank" rel="noopener noreferrer">License - GNU GPL-3.0</a></h5>
     </nav>
-  `
+  `;
   const footerElement = document.getElementById("footer");
   if (footerElement) {
     footerElement.innerHTML = FOOTER;
   } else {
-    return false
+    return false;
   }
   return true;
 }
 function getDomainFaviconURL(linkurl: string) {
-  if (!linkurl.startsWith("ht"))
-    return null;
+  if (!linkurl.startsWith("ht")) return null;
   const url = new URL(linkurl);
   try {
     return `https://www.google.com/s2/favicons?domain=${url.hostname}`;
@@ -66,22 +65,19 @@ function getDomainFaviconURL(linkurl: string) {
 }
 function faviconizeElements() {
   const urls = document.querySelectorAll("a");
-  urls.forEach(function(url) {
-    const href = url.getAttribute('href');
-    if (!url.getAttribute("target") || !href)
-      return;
+  urls.forEach(function (url) {
+    const href = url.getAttribute("href");
+    if (!url.getAttribute("target") || !href) return;
     const faviconURL = getDomainFaviconURL(href);
-    if (!faviconURL)
-      return;
-    url.outerHTML = `
+    if (!faviconURL) return;
+    url.outerHTML =
+      `
       <img src="${faviconURL}" alt="Favicon of ${url.href}" class="favicon">
     ` + url.outerHTML;
   });
 }
 function main() {
-  if (!replacePlaceholders())
-    console.error("Couldn't find elements required")
+  if (!replacePlaceholders()) console.error("Couldn't find elements required");
   faviconizeElements();
-
 }
 main();

@@ -9,7 +9,8 @@ You should have received a copy of the GNU General Public License along with Foo
 */
 :root {
   color-scheme: light dark;
-  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+  font-family:
+    Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
   --light: rgb(215 192 235);
   --dark: rgb(103 80 134);
 }
@@ -22,6 +23,11 @@ body {
 header {
   padding: 1em 2em 2em;
   margin: 0;
+  line-height: 1.2em;
+  font-family:
+    Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+    sans-serif;
+  font-weight: bold;
 }
 
 header nav a {
