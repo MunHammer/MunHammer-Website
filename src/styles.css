@@ -21,8 +21,8 @@ body {
 }
 
 header {
-  padding: 1em 2em 2em;
-  margin: 0;
+  padding: 1em 2em 8em;
+  margin: 0 0 -10em;
   line-height: 1.2em;
   font-family:
     Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
@@ -75,15 +75,15 @@ a:hover {
 @media (prefers-color-scheme: dark) {
   body {
     color: var(--light);
-    background-color: var(--dark);
+    background: var(--dark);
   }
 
   header {
-    background-color: rgb(60 0 80);
+    background: linear-gradient(180deg in oklab, rgb(60 0 80), var(--dark) 98%);
   }
 
   footer {
-    background-color: rgba(40 0 60);
+    background-color: rgb(40 0 60);
     color: rgb(135 112 160);
   }
 
@@ -103,15 +103,15 @@ a:hover {
 @media (prefers-color-scheme: light) {
   body {
     color: var(--dark);
-    background-color: var(--light);
+    background: var(--light);
   }
 
   header {
-    background-color: rgb(205 182 230);
+    background: linear-gradient(180deg in oklab, rgb(155 132 180), var(--light) 99%);
   }
 
   footer {
-    background-color: rgba(175 152 200);
+    background-color: rgb(175 152 200);
     color: rgb(60 0 80);
   }
 
