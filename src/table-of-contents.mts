@@ -23,16 +23,18 @@ class TableOfContents {
     this.descendants.push(descendant);
   }
   toHTML() {
-    let html = this.root ? `<div><h3>${this.name}</h3>` : `<h4>${this.name}</h4>`;
+    let html = this.root
+      ? `<div><h3>${this.name}</h3>`
+      : `<h4>${this.name}</h4>`;
     if (this.descendants !== null) {
       this.descendants.forEach((descendant) => {
         html += descendant.toHTML();
-      })
+      });
     }
     if (this.root) {
-      html += "</div>"
+      html += "</div>";
     }
-    return html
+    return html;
   }
 }
 
@@ -41,19 +43,24 @@ export function generateTableOfContents() {
   document.querySelectorAll("h2,h3").forEach((heading_raw) => {
     let heading = heading_raw as HTMLHeadingElement;
     if (heading.nodeName == "H2") {
-      contents.push(new TableOfContents(heading.innerText, true))
+      contents.push(new TableOfContents(heading.innerText, true));
     } else {
-      contents.at(-1)?.addDescendant(new TableOfContents(heading.innerText, false))
+      contents
+        .at(-1)
+        ?.addDescendant(new TableOfContents(heading.innerText, false));
     }
-    console.log(heading_raw.nodeName)
-  })
+    console.log(heading_raw.nodeName);
+  });
   return contents;
 }
 export function addTableOfContentsToHTML(contentElements: TableOfContents[]) {
   const content = document.querySelector("#content");
-  content?.insertAdjacentHTML("afterbegin", "<div id=\"tableOfContents\"><h2>Table Of Contents</h2><nav></nav></div>")
+  content?.insertAdjacentHTML(
+    "afterbegin",
+    '<div id="tableOfContents"><h2>Table Of Contents</h2><nav></nav></div>',
+  );
   const contents = document.querySelector("#tableOfContents nav");
   contentElements.forEach((baseHeading) => {
     contents?.insertAdjacentHTML("beforeend", baseHeading.toHTML());
-  })
+  });
 }

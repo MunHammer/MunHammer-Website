@@ -128,7 +128,11 @@ a:hover {
   }
 
   header {
-    background: linear-gradient(180deg in oklab, rgb(155 132 180), var(--light) 99%);
+    background: linear-gradient(
+      180deg in oklab,
+      rgb(155 132 180),
+      var(--light) 99%
+    );
   }
 
   footer {
