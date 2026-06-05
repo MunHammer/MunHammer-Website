@@ -15,10 +15,7 @@ jobs:
           node-version: "latest"
       - run: npm ci
       - name: Check formatting errors
-        run: npx prettier . --write
-      - uses: autofix-ci/action@v1
-        with:
-          commit-message: "Apply prettier format"
+        run: npx prettier . --check
   typescript:
     runs-on: ubuntu-latest
     name: Check for typescript errrors
