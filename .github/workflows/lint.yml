@@ -25,7 +25,7 @@ jobs:
       - name: Use node.js
         uses: actions/setup-node@v4
         with:
-          node-versions: "latest"
+          node-version: "latest"
       - run: npm ci
       - name: Lint typescript
         run: tsc
