@@ -54,11 +54,11 @@ export function replacePlaceholders(): boolean {
 }
 
 export function bookmarkHeadings() {
-    const path = window.location.pathname;
+  const path = window.location.pathname;
   document.querySelectorAll("main h2, main h3").forEach((heading) => {
-    heading.insertAdjacentHTML("beforeend", "<div class=\"section\"> §</div>")
-    heading.outerHTML = `<a href=${path}#${heading.id}>${heading.outerHTML}</a>`
-  })
+    heading.insertAdjacentHTML("beforeend", '<div class="section"> §</div>');
+    heading.outerHTML = `<a href=${path}#${heading.id}>${heading.outerHTML}</a>`;
+  });
 }
 
 export function getDomainFaviconURL(linkurl: string) {

@@ -50,7 +50,9 @@ export function generateTableOfContents() {
     } else {
       contents
         .at(-1)
-        ?.addDescendant(new TableOfContents(heading.innerText, false, heading.id));
+        ?.addDescendant(
+          new TableOfContents(heading.innerText, false, heading.id),
+        );
     }
     console.log(heading_raw.nodeName);
   });
