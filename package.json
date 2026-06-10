@@ -9,6 +9,7 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "!(**/*.html)": "prettier --write --ignore-unknown",
+    "**/*.html": "superhtml fmt"
   }
 }
