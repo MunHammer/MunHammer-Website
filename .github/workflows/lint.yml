@@ -1,0 +1,31 @@
+name: Lint code for errors
+
+on: [push, workflow_dispatch]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    name: Check for formatting mistakes
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+      - run: npm ci
+      - name: Check formatting errors
+        run: npx prettier . --check
+  typescript:
+    runs-on: ubuntu-latest
+    name: Check for typescript errrors
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+      - run: npm ci
+      - name: Lint typescript
+        run: tsc

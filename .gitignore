@@ -1,3 +1,5 @@
 # ignore typescript build artifacts
 **/*.js
 **/*.mjs
+# ignore node module artifacts
+node_modules/

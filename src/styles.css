@@ -16,6 +16,14 @@ You should have received a copy of the GNU General Public License along with Foo
   line-height: 1.7em;
 }
 
+p {
+  font-family: "Sour Gummy";
+}
+
+.body-font {
+  font-family: "Sour Gummy";
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -150,9 +158,11 @@ main h3:hover .section {
   }
 
   header {
-    background: linear-gradient(180deg in oklab,
-        rgb(155 132 180),
-        var(--light) 99%);
+    background: linear-gradient(
+      180deg in oklab,
+      rgb(155 132 180),
+      var(--light) 99%
+    );
   }
 
   footer {

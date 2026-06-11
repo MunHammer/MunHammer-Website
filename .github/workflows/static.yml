@@ -35,8 +35,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "latest"
-      - name: Install typescript
-        run: npm i -g typescript
+      - run: npm ci
       - name: Compile typescript
         run: tsc
       - name: Setup Pages

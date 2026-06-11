@@ -11,7 +11,11 @@ import {
   addTableOfContentsToHTML,
   generateTableOfContents,
 } from "./table-of-contents.mjs";
-import { replacePlaceholders, faviconizeElements, bookmarkHeadings } from "./placeholders.mjs";
+import {
+  replacePlaceholders,
+  faviconizeElements,
+  bookmarkHeadings,
+} from "./placeholders.mjs";
 function main() {
   if (!replacePlaceholders()) console.error("Couldn't find elements required");
   bookmarkHeadings();
