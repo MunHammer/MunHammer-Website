@@ -7,49 +7,25 @@ MunHammer's website is distributed in the hope that it will be useful, but WITHO
 
 You should have received a copy of the GNU General Public License along with MunHamer's website. If not, see <https://www.gnu.org/licenses/>.
 */
-export function replacePlaceholders(): boolean {
+export async function replacePlaceholders(): Promise<boolean> {
   // The heading
-  const HEADING = `
-    <h2 id="title">MunHammer.com</h2>
-    <nav>
-      <a href="/"><img src="images/pfp.gif" alt="Moving Scribbles" height="90" width="90"></a>
-      <a href="/">Main</a>
-      <a href="/about">About</a>
-      <a href="https://github.com/MunHammer/MunHammer-Website" target="_blank" rel="noopener noreferrer">Source code</a>
-      <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text" target="_blank" rel="noopener noreferrer">License - GNU GPL-3.0</a>
-    </nav>
-  `;
+  const HTML = await fetch("/placeholders.html").then((response) =>
+    response.text(),
+  );
+  const doc = new DOMParser().parseFromString(HTML, "text/html");
+  const HEADING_0 = doc.querySelector("h2");
+  const HEADING_1 = doc.querySelector("nav");
   const headerElement = document.getElementById("header");
-  if (headerElement) {
-    headerElement.insertAdjacentHTML("afterbegin", HEADING);
-  } else {
-    return false;
-  }
+  if (!HEADING_0 || !HEADING_1 || !headerElement) return false;
+  headerElement.insertAdjacentHTML(
+    "afterbegin",
+    HEADING_0.outerHTML + HEADING_1.outerHTML,
+  );
   // The footer
-  const FOOTER = `
-    <footer>
-      <nav>
-        <div class="footer-column" id="site_map">
-          <h5>Site map</h5>
-          <ul>
-            <li><a href="/">Main</a></li>
-            <li><a href="/about">About</a></li>
-          </ul>
-        </div>
-        <div class="footer-column" id="links">
-          <h5>Links</h5>
-          <ul>
-            <li><a href="https://github.com/MunHammer" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://discord.gg/FYSayAvfnp" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
-            <li><a href="https://www.reddit.com/user/RichRoof7927/" target="_blank" rel="noopener noreferrer">Reddit</a></li>
-          </ul>
-        </div>
-        <h5><a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text" target="_blank" rel="noopener noreferrer">License - GNU GPL-3.0</a></h5>
-      </nav>
-    </footer>
-  `;
+  const FOOTER = doc.querySelector("footer");
+  if (!FOOTER) return false;
   const body = document.querySelector("body");
-  body?.insertAdjacentHTML("beforeend", FOOTER);
+  body?.insertAdjacentHTML("beforeend", FOOTER.outerHTML);
   return true;
 }
 
