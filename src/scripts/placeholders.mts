@@ -14,7 +14,7 @@ export function replacePlaceholders(): boolean {
     <nav>
       <a href="/"><img src="images/pfp.gif" alt="Moving Scribbles" height="90" width="90"></a>
       <a href="/">Main</a>
-      <a href="/about.html">About</a>
+      <a href="/about">About</a>
       <a href="https://github.com/MunHammer/MunHammer-Website" target="_blank" rel="noopener noreferrer">Source code</a>
       <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#license-text" target="_blank" rel="noopener noreferrer">License - GNU GPL-3.0</a>
     </nav>
@@ -33,7 +33,7 @@ export function replacePlaceholders(): boolean {
           <h5>Site map</h5>
           <ul>
             <li><a href="/">Main</a></li>
-            <li><a href="/about.html">About</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </div>
         <div class="footer-column" id="links">
