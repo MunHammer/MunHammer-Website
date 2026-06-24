@@ -54,7 +54,6 @@ export function generateTableOfContents() {
           new TableOfContents(heading.innerText, false, heading.id),
         );
     }
-    console.log(heading_raw.nodeName);
   });
   return contents;
 }
