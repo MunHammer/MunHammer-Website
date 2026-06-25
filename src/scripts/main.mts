@@ -16,8 +16,9 @@ import {
   faviconizeElements,
   bookmarkHeadings,
 } from "./placeholders.mjs";
-function main() {
-  if (!replacePlaceholders()) console.error("Couldn't find elements required");
+async function main() {
+  if (!(await replacePlaceholders()))
+    console.error("Couldn't find elements required");
   bookmarkHeadings();
   faviconizeElements();
   addTableOfContentsToHTML(generateTableOfContents());
