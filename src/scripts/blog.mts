@@ -11,23 +11,30 @@ class Pair {
   title: String;
   path: String;
   blurb: String;
-  constructor(title: String, path: String, blurb: String) {
+  date: String;
+  constructor(title: String, path: String, blurb: String, date: String) {
     this.title = title;
     this.path = path;
     this.blurb = blurb;
+    this.date = date;
   }
   toHTML() {
-    return `<a href="${this.path}" id="${this.title}"><div class="post"><h2>${this.title}</h2><p>${this.blurb}</p></div><a>`;
+    return `<a href="${this.path}" id="${this.title}"><div class="post"><h2>${this.title}</h2><sub>${this.date}</sub><p>${this.blurb}</p></div><a>`;
   }
 }
 async function getPages() {
   return (await (await fetch("/blog/list.txt")).text())
     .split("\n")
     .map((line) => line.split(","))
-    .filter((pair) => pair.length == 3)
+    .filter((pair) => pair.length == 4)
     .map(
       (pair) =>
-        new Pair(pair[0] as String, pair[1] as String, pair[2] as String),
+        new Pair(
+          pair[0] as String,
+          pair[1] as String,
+          pair[2] as String,
+          pair[3] as String,
+        ),
     );
 }
 function generatePages(pages: Pair[]) {
