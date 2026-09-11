@@ -137,7 +137,7 @@ main h3:hover .section {
 @media (prefers-color-scheme: dark) {
   body {
     color: var(--light);
-    background: var(--dark);
+    background: linear-gradient(90deg in oklab, rgb(60 0 80), var(--dark) 20%);
   }
 
   header {
@@ -182,14 +182,18 @@ main h3:hover .section {
 @media (prefers-color-scheme: light) {
   body {
     color: var(--dark);
-    background: var(--light);
+    background: linear-gradient(
+      90deg in oklab,
+      rgb(155 132 180),
+      var(--light) 20%
+    );
   }
 
   header {
     background: linear-gradient(
       180deg in oklab,
       rgb(155 132 180),
-      var(--light) 99%
+      transparent 99%
     );
   }
 
