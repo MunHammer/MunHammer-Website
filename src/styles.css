@@ -50,7 +50,7 @@ header nav a {
 }
 
 #content {
-  padding: 5em 0;
+  padding: 0 0 5em;
   margin: 0;
   display: flex;
   align-items: flex-start;
@@ -59,6 +59,7 @@ header nav a {
 
 main {
   padding: 0 0 0 9em;
+  margin-top: 5em;
   width: 40em;
   font-size: 1.03em;
 }
