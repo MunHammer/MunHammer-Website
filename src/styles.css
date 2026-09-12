@@ -16,6 +16,11 @@ You should have received a copy of the GNU General Public License along with Mun
   line-height: 1.7em;
 }
 
+h1 {
+  text-align: center;
+  line-height: 50px;
+}
+
 p {
   font-family: "Sour Gummy";
 }
@@ -45,20 +50,25 @@ header nav a {
 }
 
 #content {
-  padding: 5em 0;
+  padding: 0 0 5em;
   margin: 0;
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 main {
   padding: 0 0 0 9em;
+  margin-top: 5em;
   width: 40em;
   font-size: 1.03em;
 }
 
 #tableOfContents {
   padding: 1em 0 0 3em;
+  left: 0;
+  height: 100%;
+  position: fixed;
 }
 
 #tableOfContents nav div h4 {
@@ -128,7 +138,7 @@ main h3:hover .section {
 @media (prefers-color-scheme: dark) {
   body {
     color: var(--light);
-    background: var(--dark);
+    background: linear-gradient(90deg in oklab, rgb(60 0 80), var(--dark) 20%);
   }
 
   header {
@@ -173,14 +183,18 @@ main h3:hover .section {
 @media (prefers-color-scheme: light) {
   body {
     color: var(--dark);
-    background: var(--light);
+    background: linear-gradient(
+      90deg in oklab,
+      rgb(155 132 180),
+      var(--light) 20%
+    );
   }
 
   header {
     background: linear-gradient(
       180deg in oklab,
       rgb(155 132 180),
-      var(--light) 99%
+      transparent 99%
     );
   }
 
@@ -202,16 +216,12 @@ main h3:hover .section {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   #tableOfContents {
     display: none !important;
   }
 
-  h1 {
-    text-align: center;
-  }
-
   main {
-    padding: 1em;
+    padding: 2em;
   }
 }
